@@ -105,24 +105,16 @@
       }
     },
     created(){
-      // this.getTicketsList();
+      this.getTicketsList();
     },
     methods:{
       navigatorToOrder(item, index){
-        this.$router.push({path:'/order', query:{name: item.name, index}});
+        this.$router.push({path:'order', query:{name: item.name, index}});
       },
       getTicketsList(){     //三中门票
-        for (let i=1; i<4;i++){
-          https.getTicketsList(i).then(res =>{
-            if(i==1){
-              this.hots = res.data;
-            }else if(i==2){
-              this.adults = res.data;
-            }else{
-              this.childrens = res.data;
-            }
-          })
-        }
+        https.getTicketsList().then(res =>{
+          
+        })
       },
     }
   }

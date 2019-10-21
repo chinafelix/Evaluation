@@ -3,8 +3,8 @@ import {getData, postData, getDataWithNoToken, postDataWithNoToken} from "./http
 export default {
 
   // 门票列表
-  getTicketsList(index){
-    return getDataWithNoToken(`/api/ticket/${index}.json`,{}).then(res =>{
+  getTicketsList(){
+    return getDataWithNoToken(`/wxAuth/login`,{}).then(res =>{
       return res;
     })
   },

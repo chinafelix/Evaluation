@@ -24,16 +24,16 @@ if(process.env.NODE_ENV == 'development'){      //开发环境
 
 // axios.defaults.headers.post['Content-Type']  = 'application/x-www-form-urlencoded;charset=UTF-8';
 
-axios.defaults.withCredentials=true;
-axios.defaults.crossDomain=true;
+// axios.defaults.withCredentials=true;
+// axios.defaults.crossDomain=true;
 
 const instance = axios.create({
   // baseURL: '/yxb'
   baseURL: server,
 });
 
-instance.defaults.withCredentials=true;
-instance.defaults.crossDomain=true;
+// instance.defaults.withCredentials=true;
+// instance.defaults.crossDomain=true;
 
 
 const _instance = axios.create({
@@ -41,8 +41,8 @@ const _instance = axios.create({
   baseURL: server,
 });
 
-_instance.defaults.withCredentials=true;
-_instance.defaults.crossDomain=true;
+// _instance.defaults.withCredentials=true;
+// _instance.defaults.crossDomain=true;
 
 //
 // const token = store.state.userInfo.token;
@@ -51,14 +51,14 @@ _instance.defaults.crossDomain=true;
 // 请求拦截
 instance.interceptors.request.use(config=> {
 
-  const token = store.state.userInfo.token;
-  // config.data = JSON.stringify(config.data);
-  config.headers = {
-    'Content-Type': 'application/x-www-form-urlencoded',
-    'Authorization': token
-  };
+  // const token = store.state.userInfo.token;
+  // // config.data = JSON.stringify(config.data);
+  // config.headers = {
+  //   'Content-Type': 'application/x-www-form-urlencoded',
+  //   'Authorization': token
+  // };
 
-  token && (config.headers.Authorization = token);
+  // token && (config.headers.Authorization = token);
   // console.log(config);
   return config;
 
@@ -70,9 +70,9 @@ instance.interceptors.request.use(config=> {
 _instance.interceptors.request.use(config=> {
 
   // config.data = JSON.stringify(config.data);
-  config.headers = {
-    'Content-Type': 'application/x-www-form-urlencoded'
-  };
+  // config.headers = {
+  //   'Content-Type': 'application/x-www-form-urlencoded'
+  // };
 
   return config;
 
